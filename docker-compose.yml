@@ -1,0 +1,13 @@
+services:
+  oopt-gnpy:
+    image: networkwize/oopt-gnpy:latest
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: /bin/bash
+    volumes:
+      - .:/code
+    ports:
+      - "8000:80"
+    restart: unless-stopped
+    
